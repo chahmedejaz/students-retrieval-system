@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+<h1>Student Record Retrieval System </h1>
+
+<%= form_with url: "/students/search", method: :post do |form| %>
+  <%= form.text_field :id, placeholder: 'Search by ID' %>
+  <%= form.submit "Search" %>
+<% end %>
+
+<%= link_to "New student", new_student_path %>
+<div id="students">
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @students.each do |student| %>
+      <%= render student %>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+
