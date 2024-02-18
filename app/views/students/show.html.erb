@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="student">
+  <h2><%= @student.name %></h2>
+  <p><span>Email</span>: <%= @student.email %></p>
+
+  <% if @course %>
+    <p><span>Course Name</span>: <%= @course.course_name %></p>
+    <p><span>Course Credit Hours</span>: <%= @course.credit_hours %></p>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "Edit this student", edit_student_path(@student) %> |
+  <%= link_to "Back to students", students_path %>
+
+  <%= button_to "Delete this student", @student, method: :delete %>
+</div>
