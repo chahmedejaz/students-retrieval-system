@@ -11,10 +11,11 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2024_02_18_111217) do
+  # all the tables have auto increment id by default in it and that would always be in integer
   create_table "courses", force: :cascade do |t|
     t.string "course_name"
     t.integer "credit_hours"
-    t.integer "student_id"
+    t.integer "student_id" # this is handled by Rails under the hood, so that it would always be integer
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["student_id"], name: "index_courses_on_student_id"
